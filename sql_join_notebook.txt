@@ -1,0 +1,148 @@
+merge table---both table 1 column common
+append table--both table have same column
+
+
+Data Modelling--relationship
+primary,foreign key 
+
+bank database--
+customer table---
+
+cust_id(primary key) name age city dob country
+
+account table--
+
+cust_id(foreign key) acct_no acct_type acct_balance
+
+
+type of data modelling--
+
+1.one to one
+2.one to many
+3.many to one 
+4.many to many
+
+
+
+3.dax---data analysis expression
+
+
+
+join------->two or more table join together
+
+1.normal join----select*from customer,employee;
+2.inner join()-----join on the basis of common key column
+,fetch the common data from both table
+costomer.cust_id=employe.cust_id
+
+
+
+select c.name,c.age, e.emp_id,e.dept 
+from customer c join employee e on(explicit--force) 
+c.cust_id=e.cust_id where groupy having 
+
+
+3.left join-->fetch all data from left table but 
+
+select*from customer left join employee on
+customer.cust_id=employee.cust_id
+
+4.right join--fetch all data from right table but
+matching data from left table 
+
+select*from customer right join employee on
+customer.cust_id=employee.cust_id
+
+5.full outer join--fetch all data from 
+both table with duplication
+
+6.natural join--without on condition,it is similar to inner join
+  it works implicitly
+cust_id  name  age  city         cust_id  dept   salary  
+
+select* from customer natural join employee;
+
+
+7.self join--fetch data from itself where
+table itself become two table by using on 
+condition
+
+customer as(alias) a
+customer as b
+
+customer as cust1 self join customer as cust2
+8.cross join(cartesian join)----no relationship
+
+customer(10)     employee(8)
+1                    1
+80
+
+
+
+implicit---->computer own language by default one data type convert 
+
+
+explicit---->
+
+customer      cust_id         account
+
+
+
+
+cross join(cartesian join)
+customer     message                        
+a            500 of on electronic item      
+b            500 of on electronic item     
+c            500 of on electronic item
+d            500 of on electronic item
+
+16
+
+relationship---data modelling
+1.one to one--->each record linked to only one record 
+  in another table 
+2.one to many-->each record linked to more than one record 
+  in other tables
+3.many to one-->  
+4.many to many->
+
+
+
+dbms_2----->
+
+**SUBQUERY---->QUERY INSIDE ANOTHER QUERY,TO REDUCE THE JOIN
+--IT ALSO WORKS ON THE BASIS OF COMMON KEY COLUMNS.
+-->OUTER QUERY-->FIRST QUERY
+-->INNER QUERY-->LAST QUERY
+SELECT AVG(SALARY) FROM DEPT;25000.25
+
+
+--CORRELATED SUBQUERY---
+--NON CORRELATED SUBQUERY--
+
+
+SELECT
+FROM 
+WHERE
+HAVING
+CTE--->VIEW TABLE---->temporary table
+
+with cte_name as (column1,column2,....) as abc(select
+avg(salary) from abc;
+
+
+window function--(advance aggregation function,
+analytics function,olap)
+
+
+avg,sum,count-->scalar output,
+
+
+
+
+hr--4           
+finance-5
+sales-3
+
+rank() over(partiton by dept order by salary desc)
+max(salary) over()

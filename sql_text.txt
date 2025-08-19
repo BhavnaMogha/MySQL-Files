@@ -1,0 +1,340 @@
+Data integrity---->
+
+1.row level integrity---keys(uniqly identify the record)
+2.column level-data type,size
+3.refrential integrity-->
+parent child relationship
+
+--ACID->Automicity consistency isolation durabality
+
+
+
+sql---
+1.DDL--(Data definition language)
+  -->anything we are playing with structure
+     of the database
+2.DML--(Data manipulation)
+  -->any operation like inserting,update,delete
+3.DQL--(Data query lang)
+4.dcl--(Data control)
+5.TCL--(Transaction control)
+
+
+
+ex----bikanerwala(mira)
+
+database,table,menus,orders,payment,employees
+
+
+sam(Database expert)
+1.DDL-
+  CREATE TABLE EMPLOYEE;
+  ALTER TABLE EMPLOYEE ADD COLUMN CITY
+  (add,rename,modify,change,drop columns)
+  DROP TABLE EMPLYEE
+  TRUNCATE EMPLOYEE
+
+2.DML-
+  INSERT INTO ORDER VALUES()
+  UPDATE
+  DELETE
+
+3.DQL-
+  SELECT*FROM CUSTOMER ;
+
+4.DCL--CONTROLLING WHO CAN DO WHAT
+  GRANT--
+  REVOKE-
+5.TCL--
+  ROLLBACK--
+  COMMIT--
+
+  
+***TCL-TRANSACTION CONTROL LANGUAGE
+**TRANSACTION-->MULTIPLE SEQUENCE DML	
+**START TRANCATION
+update transaction set balance=balance-1000 where name="vijay";
+update transaction set balance=balance+1000 where name="jack";
+commit
+--COMMIT==>
+--ROLLBACK==>
+
+
+isolation---
+*read uncommited(dirty reads)
+*read commited
+**repeatable read--
+
+---aggregate function(count,sum,avg,min,max)
+
+--scalar value
+
+syntax::
+select product, sum(sales),avg(profit) from order
+where sales>2000;
+
+
+
+
+
+brand name            sales       product
+samsung               15000        mobile
+samsung               45000          tv
+apple                 62500         macbook
+moto                  24000         tablets
+apple                 19000         watch
+lava                  10000         freeze
+moto                  20000         tv
+
+productwise   sales
+samsung        60000
+apple          81500
+moto           44000
+lava           10000
+
+
+sql rule::
+
+select
+--columns,agg(columns)
+from
+--table name
+where
+condition with without aggregate column
+group by
+--grouping columns without aggregate and condition
+having
+--condition with aggregate columns
+order by
+--columns
+limit:
+
+offset:
+
+
+
+-----------------------------------------
+JOINS---->COMBINE TWO OR MORE TABLE,BASED
+ON THE COMMON KEY COLOUMN
+
+CUSTOMER           ACOOUNT
+ID                   ID
+NAME                ACC_ID
+AGE                 ACC_NO
+CITY                 BALANCE
+
+**DATA MODELLING--
+--ONE TO ONE
+--ONE TO MANY
+--MANY TO ONE
+--MANY TO MANY
+
+
+TYPES OF JOIN---->
+1.normal join
+2.inner join--fetch the all common data from
+both table
+
+select customer.id,customer.name,account.acc_num,
+account.balance from customer join account
+on customer.id=account.id;
+
+select c.id,c.name,a.acc_num,a.balance
+from customer c join account a on 
+on c.id=a.id;
+3.left join--fetch all the data from left 
+table and common data from right table
+
+select c.id,c.name,a.acc_num,a.balance
+from customer c left join account a on 
+on c.id=a.id;
+
+
+4.right join--fetch all the data from right 
+table and common data from left table
+
+
+select c.id,c.name,a.acc_num,a.balance
+from customer c right join account a on 
+on c.id=a.id;
+
+5.cross join(cartesian join)--
+from first table it will take one row then
+multiply by second table from each row
+
+select c.id,c.name,a.acc_num,a.balance
+from customer c cross join account a;
+
+6.natural join--implicit join
+
+select*from customer natural join account;
+
+7.self join--->
+it join with itself and it becomes the
+two tables.
+
+select c.id,c.name,c1.salary from 
+customer c join customer c1 on
+c.id=c1.id;
+
+
+
+----------------------------------------------------------------------------
+subquery---->the query inside another query.(nested query)
+common key column based
+
+--types subquery--
+--corelated subquery-----
+scalar rows--><,>,=
+
+
+multiple rows,multiple columns-->in,all,any,exist,not exist
+--non corelated subquery--
+
+fetch the employee name whose salary is greater than avg salary of
+each dept of employee.
+
+emp_id   name   dept  
+1         c      sales  
+2         b      hr     
+3         a      sales   
+4         d      hr      
+5         e      it       
+6         g      it       
+
+department table--->
+
+dept_id    dept  emp_id  salary
+101        sales  1      15000
+
+
+select emp_name,salary from empoyees where emp_id in
+(select emp_id,avg(salary),dept from department group by dept);
+
+
+select*from employee where salay>
+(select avg(salary) from department group by department)
+
+-------------------------------------------------------
+
+CTE---Common Table Expression(virtual table)
+complex queries more readeble.
+--reuse,readiblity
+
+syntax cte--->
+with cte_name as(select query)
+select* from cte_name 
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+WINDOW FUNCTION---->(OLAP,ANALAYTICS FUNCTION,ADVANCE AGGREGATE FUNCTION)
+
+IT REDUCE THE PROCESS OF JOIN,SELF JOIN,MOSTLY ORGANISATION,WORK FAST OR EFFICIENT
+,COMPLEX QUERY
+
+
+CUMMALATIVE_SUM---->
+
+SALARY    CUMM_SUM    RANKING    TRANSACTION
+ 
+12000     12000          5           12000
+15000     27000          4           15000
+20000     47000          2
+35000     82000          1
+18000     100000         3
+
+
+AGGREGATE FUNCTION---SCALAR OUTPUT
+
+RANK()  OVER(PARTITION BY DEPT AND ORDER BY SALARY)
+
+HR       48500
+HR       48500
+SALES    45000
+SALES    45000
+IT       42000
+IT       42000
+
+1.RANKING---->
+A.RANK() OVER()--
+B.DENSE_RANK() OVER()--
+C.PERCENTILE_RANKING
+
+2. row number--->unique id for each row
+
+3.lead and lag--->back and forth
+
+-->DATA INTEGRITY--->
+
+1.ROW LEVEL-->UNIQUELY IDENTIFIER(PRIMARY KEY)-->rohan rohan 50000,52000 
+
+2.COLUMN LEVEL-->DATA TYPE,SIZE
+E_NAME(CHAR(15)) ,salary(float(15)),dob(date)
+
+3.REFERENTIAL INTEGRITY-->RELATONSHIP BETWEEN TWO TABLE
+HEIRIECHAL,PARENT CHILD RELATIONSHIP
+
+UPDATE CASCADING
+DELETE CASCADING
+
+NORMALIZATION--->
+
+ID        NAME       PRD            PRICE
+101,1    SAMSUNG    WATCH,TV       25000,15000
+
+
+
+ID   PRD ID    NAME     PRD           PRICE
+101    1     SAMSUNG    WATCH          25000
+102    2     APPLE      15/02/2025     15000
+
+
+ORGANIZE,MINIMIZE REDUNDUNCY(DEPENDENCY),MNIMIZE ANOMOLIEES(DUPLICATION)
+
+---------------------------------------------------
+TCL-->TRANSACTON CONTROL LANGUAGE
+
+--START TRANSACTION
+--COMMIT
+--ROLLBACK
+--SAVEPOINT--AMAZON-->CANCELLED--PARTIAL AMOUNT
+--RELEASE SAVEPOINT
+
+MULTIPLE DML CONCURENTLY HIT
+INSERT,UPDATE,DELETE
+
+VIEWS---VIRTUAL TABLE(TEMPORARY TABLE)
+
+ACID--automicity,consistency,isolation,durability
+
+ISOLATION(READ UNCOMMITED(DIRTY READ),READ COMMITED,
+REPEATABLE READ,
+SERIALIZATION)
+
+TRANSACTION 1ST--10 (UNCOMMIT)(ROLLBACK)
+TRANSACTION 2ND--10 (COMMIT)
+
+A=25000-1000=24000
+B=45000+1000=46000
+A ACCOUNT DEBIT 1000 , CREDIT 1000 RUPEES TO B ACCOUNT
+
+--VIEW-->temporary table
+
+
+
+
+
+
+
+
+
+
+12,vijay
+
+
+
+
+
+

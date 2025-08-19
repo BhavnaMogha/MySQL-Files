@@ -1,0 +1,63 @@
+merge table---both table 1 column common
+append table--both table have same column
+
+
+Data Modelling--relationship
+primary,foreign key 
+
+bank database--
+customer table---
+
+cust_id(primary key) name age city dob country
+
+account table--
+
+cust_id(foreign key) acct_no acct_type acct_balance
+
+
+type of data modelling--
+
+1.one to one
+2.one to many
+3.many to one 
+4.many to many
+
+
+
+3.dax---data analysis expression
+
+
+
+join-------
+
+1.normal join----select*from customer,employee;
+2.inner join-----join on the basis of common key column
+on
+
+select*from customer join employee on
+customer.cust_id=employee.cust_id
+3.left join-->fetch all data from left table but 
+
+select*from customer left join employee on
+customer.cust_id=employee.cust_id
+
+4.right join--fetch all data from right table but
+matching data from left table 
+
+select*from customer right join employee on
+customer.cust_id=employee.cust_id
+
+5.full outer join--fetch all data from 
+both table with duplication
+
+6.natural join--
+7.self join--fetch data from itself where
+table itself become two table by using on 
+condition
+
+customer as cust1 self join customer as cust2
+8.cross join(cartesian join)
+
+customer(10)     employee(8)
+1                    1
+80
