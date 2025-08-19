@@ -1,0 +1,136 @@
+# run this to create a database ans use it
+
+create database Assingment 1;
+use Assingment 1;
+set SQL_SAFE_UPDATES=0;
+
+
+# # run this to create a table 
+
+
+CREATE TABLE Employees (
+  ID INT,
+  Name VARCHAR(255),
+  Age INT,
+  Email VARCHAR(255),
+  City VARCHAR(255),
+  PhoneNo VARCHAR(15),
+  Department VARCHAR(255),
+  Salary int
+);
+
+
+
+## Run the code to insert the values 
+
+
+
+INSERT INTO Employees (ID, Name, Age, Email, City, PhoneNo, Department, Salary)
+VALUES
+  (1, 'Amit Kumar', 32, 'amitKumar@gmail.com', 'Mumbai', '9876543210', 'Finance Department', 50000),
+  (2, 'Priya Sharma', 28, 'priyaSharma@gmail.com', 'Delhi', '9876543211', 'Marketing Department', 45000),
+  (3, 'Rajesh Patel', 35, 'rajeshPatel@gmail.com', 'Ahmedabad', '9876543212', 'Operations Department', 55000),
+  (4, 'Neha Singh', 31, 'nehasingh@gmail.com', 'Bangalore', '9876543213', 'Human Resources Department', 48000),
+  (5, 'Rahul Verma', 29, 'rahulverma@gmail.com', 'Chennai', '9876543214', 'Sales Department', 52000),
+  (6, 'Anita Gupta', 33, 'anitagupta@gmail.com', 'Kolkata', '9876543215', 'Finance Department', 49000),
+  (7, 'Amitabh Mishra', 45, 'amitabhmishra@gmail.com', 'Lucknow', '9876543216', 'Analyst Department', 55000),
+  (8, 'Sneha Kapoor', 29, 'snehakapoor@gmail.com', 'Pune', '9876543217', 'Marketing Department', 47000),
+  (9, 'Rohit Sharma', 27, 'rohitSharma@gmail.com', 'Jaipur', '9876543218', 'Analyst Department', 52000),
+  (10, 'Kavita Singh', 36, 'kavitasingh@gmail.com', 'Hyderabad', '9876543219', 'Human Resources Department', 51000),
+  (11, 'Sanjay Verma', 32, 'sanjayverma@gmail.com', 'Ahmedabad', '9876543220', 'Finance Department', 50000),
+  (12, 'Nisha Shah', 30, 'nishasha@gmail.com', 'Mumbai', '9876543221', 'Analyst Department', 46000),
+  (13, 'Rakesh Patel', 38, 'rakeshPatel@gmail.com', 'Delhi', '9876543222', 'Sales Department', 54000),
+  (14, 'Pooja Sharma', 26, 'poojaSharma@gmail.com', 'Bangalore', '9876543223', 'Operations Department', 48000),
+  (15, 'Manish Gupta', 34, 'manishgupta@gmail.com', 'Chennai', '9876543224', 'Human Resources Department', 53000),
+  (16, 'Meera Joshi', 31, 'meerajoshi@gmail.com', 'Kolkata', '9876543225', 'Finance Department', 50000),
+  (17, 'Rajeev Singh', 39, 'rajeevsingh@gmail.com', 'Lucknow', '9876543226', 'Sales Department', 56000),
+  (18, 'Kiran Kapoor', 28, 'kirankapoor@gmail.com', 'Pune', '9876543227', 'Analyst Department', 48000),
+  (19, 'Ajay Verma', 26, 'ajayverma@gmail.com', 'Jaipur', '9487654322', 'Analyst Department', 22000),
+  (20, 'Neha Gupta', 27, 'nehagupta@gmail.com', 'Hyderabad', '9876543229', 'Finance Department', 47000),
+  (21, 'Aman Kumar', 29, 'amanKumar@gmail.com', 'Mumbai', '9876543230', 'Marketing Department', 48000),
+  (22, 'Sonia Singh', 34, 'soniasingh@gmail.com', 'Delhi', '9876543231', 'Analyst Department', 55000),
+  (23, 'Ravi Patel', 31, 'raviPatel@gmail.com', 'Bangalore', '9876543232', 'Operations Department', 50000),
+  (24, 'Priya Verma', 32, 'priyaverma@gmail.com', 'Chennai', '9876543233', 'Human Resources Department', 52000),
+  (25, 'Vikas Sharma', 30, 'vikasSharma@gmail.com', 'Kolkata', '9876543234', 'IT Department', 49000),
+  (26, 'Anjali Kapoor', 33, 'anjalikapoor@gmail.com', 'Lucknow', '9876543235', 'Finance Department', 51000),
+  (27, 'Rajiv Mishra', 36, 'rajivmishra@gmail.com', 'Pune', '9876543236', 'Sales Department', 54000),
+  (28, 'Ananya Singh', 28, 'ananyasingh@gmail.com', 'Jaipur', '9876543237', 'Marketing Department', 46000),
+  (29, 'Vivek Verma', 35, 'vivekverma@gmail.com', 'Ahmedabad', '9876543238', 'Operations Department', 53000),
+  (30, 'Shreya Sharma', 29, 'shreyaSharma@gmail.com', 'Hyderabad', '9876543239', 'Human Resources Department', 50000),
+  (31, 'Mohit Kapoor', 33, 'mohitkapoor@gmail.com', 'Mumbai', '9876543240', 'IT Department', 52000),
+  (32, 'Preeti Patel', 31, 'preetiPatel@gmail.com', 'Delhi', '9876543241', 'Finance Department', 49000),
+  (33, 'Rahul Sharma', 28, 'rahulSharma@gmail.com', 'Bangalore', '9876543242', 'Sales Department', 47000),
+  (34, 'Rohit Kumar', 24, 'rohitKumar@gmail.com', 'Dhanbad', '7004747342', 'Analyst Department',50550),
+  (35, 'Rajesh Gupta', 32, 'rajeshgupta@gmail.com', 'Chandigarh', '9876543243', 'Operations Department', 50000),
+  (36, 'Anu Singh', 29, 'anusingh@gmail.com', 'Kochi', '9876543244', 'Human Resources Department', 48000),
+  (37, 'Vivek Sharma', 34, 'vivekSharma@gmail.com', 'Jaipur', '9876543245', 'Analyst Department', 55000),
+  (38, 'Pooja Patel', 31, 'poojaPatel@gmail.com', 'Guwahati', '9876543246', 'Analyst Department', 52000),
+  (39, 'Arun Verma', 30, 'arunverma@gmail.com', 'Bhubaneswar', '9876543247', 'Marketing Department', 49000),
+  (40, 'Riya Kapoor', 27, 'riyakapoor@gmail.com', 'Agra', '9876543248', 'Sales Department', 48000),
+  (41, 'Ajay Sharma', 32, 'ajaysharma@gmail.com', 'Amritsar', '9876543249', 'Operations Department', 50000),
+  (42, 'Kavita Gupta', 29, 'kavitagupta@gmail.com', 'Surat', '9876543250', 'Human Resources Department', 46000),
+  (43, 'Rahul Patel', 34, 'rahulpatel@gmail.com', 'Indore', '9876543251', 'IT Department', 53000),
+  (44, 'Neha Verma', 31, 'nehaverma@gmail.com', 'Coimbatore', '9876543252', 'Finance Department', 50000),
+  (45, 'Amit Singh', 28, 'amitsingh@gmail.com', 'Jaipur', '9876543253', 'IT Department', 51000),
+  (46, 'Riya Sharma', 32, 'riyaSharma@gmail.com', 'Mumbai', '9876543254', 'Operations Department', 54000),
+  (47, 'Deepak Patel', 29, 'deepakPatel@gmail.com', 'Delhi', '9876543255', 'Sales Department', 52000),
+  (48, 'Kiran Verma', 35, 'kiranverma@gmail.com', 'Bangalore', '9876543256', 'Finance Department', 47000),
+  (49, 'Sanjay Kapoor', 31, 'sanjaykapoor@gmail.com', 'Chennai', '9876543257', 'Human Resources Department', 56000),
+  (50, 'Anjali Singh', 30, 'anjalisingh@gmail.com', 'Kolkata', '9876543258', 'Marketing Department', 48000),
+  (51, 'Rajesh Gupta', 33, 'rajeshGupta@gmail.com', 'Pune', '9876543259', 'IT Department', 53000),
+  (52, 'Meena Patel', 29, 'meenaPatel@gmail.com', 'Hyderabad', '9876543260', 'Operations Department', 49000),
+  (53, 'Alok Sharma', 36, 'aloksharma@gmail.com', 'Ahmedabad', '9876543261', 'Sales Department', 51000),
+  (54, 'Nisha Verma', 31, 'nishaverma@gmail.com', 'Mumbai', '9876543262', 'Analyst Department', 54000),
+  (55, 'Amit Gupta', 28, 'amitgupta@gmail.com', 'Gujarat', '9876543263', 'Analyst Department', 51000),
+  (56, 'Rakesh Kumar', 32, 'rakeshkumar@gmail.com', 'Dhanbad', '9876543264', 'Operations Department', 54000),
+  (57, 'Priya Singh', 29, 'priyasingh@gmail.com', 'Patna', '9876543265', 'Sales Department', 52000),
+  (58, 'Kavita Verma', 35, 'kavitaverma@gmail.com', 'Gaya', '9876543266', 'Finance Department', 47000),
+  (59, 'Sanjay Kumar', 31, 'sanjaykumar@gmail.com', 'Kolkata', '9876543267', 'Human Resources Department', 56000),
+  (60, 'Anita Singh', 30, 'anitasingh@gmail.com', 'Gujarat', '9876543268', 'Marketing Department', 48000),
+  (61, 'Rajesh Gupta', 33, 'rajeshgupta@gmail.com', 'Dhanbad', '9876543269', 'IT Department', 53000),
+  (62, 'Riya Verma', 29, 'riyaverma@gmail.com', 'Patna', '9876543270', 'Operations Department', 49000),
+  (63, 'Alok Kumar', 36, 'alokkumar@gmail.com', 'Gaya', '9876543271', 'Sales Department', 51000),
+  (64, 'Nisha Singh', 31, 'nishasingh@gmail.com', 'Kolkata', '9876543272', 'Analyst Department', 54000);
+
+
+
+
+
+
+
+
+
+
+################################################################################################## QUESTIONS ####################################################################
+
+
+
+
+
+
+Q1. Replace the Sales department from IT department.
+
+Q2. -- Write a query to display the first three characters of each employee's name.
+
+
+Q3. -- Write a query to display the last two characters of each employee's name.
+
+Q4. -- Write a query to display the names of employees in reverse order.
+
+
+
+Q5. #Find the email addresses of employees who work in the city 'Delhi'.
+
+
+Q6 #Count the number of employees in each department
+
+Q7 #Find the names and email addresses of employees who earn the highest salary in each department.
+
+
+Q8. Write a query to display those employees whose salary are even
+
+Q9. # write a query to give increament in saalary of 10% to those employees whose age is gretaer than 28
+
+
+
+
